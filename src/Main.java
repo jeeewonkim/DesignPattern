@@ -1,7 +1,6 @@
-import Adapter.Adaptee;
-import Template.AbstractDisplay;
-import Template.CharDisplay;
-import Template.StringDisplay;
+import FactoryMethod.Factory.Factory;
+import FactoryMethod.idcard.IDCardFactory;
+import FactoryMethod.Factory.Product;
 
 public class Main {
     public static void main(String[] args) {
@@ -23,11 +22,21 @@ public class Main {
         Adaptee adaptee = new Adaptee();
         adaptee.printAC_to_DC();*/
 
+        /*4주차 Template
         AbstractDisplay d1 = new CharDisplay('H');
         AbstractDisplay d2 = new StringDisplay("Hello, World!");
 
         d1.display();
-        d2.display();
+        d2.display();*/
+
+        Factory factory = new IDCardFactory();
+        Product card1 = factory.create("Youngjin Kim");
+        Product card2 = factory.create("Sujeong Kim");
+        Product card3 = factory.create("Chungyong Kim");
+        card1.use();
+        card2.use();
+        card3.use();
+
     }
 
 }
